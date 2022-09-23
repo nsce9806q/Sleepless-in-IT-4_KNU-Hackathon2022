@@ -1,12 +1,10 @@
 import Layout from "../components/Layout";
 import styled from "styled-components";
 
-export default function Mainpage() {
+export default function Activity() {
   return (
-    <Layout title="안녕하세요" hasBackButton>
-      <Main>메인페이지 입니다.</Main>
-      <div> </div>
-
+    <Layout title="활동 페이지" hasBackButton>
+      <Main>활동페이지입니다.</Main>
     </Layout>
   );
 }
