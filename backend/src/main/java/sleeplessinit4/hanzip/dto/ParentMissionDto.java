@@ -17,5 +17,7 @@ public class ParentMissionDto {
     private String missionTitle;
     private String missionContent;
     private Long reward;
+    private Long activityPoint;
+    private Long communicationPoint;
     private Boolean isComplete;
 }

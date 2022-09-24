@@ -47,6 +47,8 @@ public class ChildrenPageServiceImpl implements ChildrenPageService {
                     .missionContent(childrenMission.getMissionContent())
                     .missionLevel(childrenMission.getMissionLevel())
                     .reward(childrenMission.getReward())
+                    .activityPoint(childrenMission.getActivityPoint())
+                    .communicationPoint(childrenMission.getCommunicationPoint())
                     .isComplete(childrenMission.getIsComplete())
                     .build();
 

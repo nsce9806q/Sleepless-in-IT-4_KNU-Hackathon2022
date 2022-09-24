@@ -50,6 +50,8 @@ public class ParentPageServiceImpl implements ParentPageService {
                     .missionContent(parentMission.getMissionContent())
                     .missionLevel(parentMission.getMissionLevel())
                     .reward(parentMission.getReward())
+                    .activityPoint(parentMission.getActivityPoint())
+                    .communicationPoint(parentMission.getCommunicationPoint())
                     .isComplete(parentMission.getIsComplete())
                     .build();
 
