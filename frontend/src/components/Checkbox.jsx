@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Checkbox({ text }) {
   return (
     <>
-      <StyledInput type="checkbox" id={text} name={text} />
+      <StyledInput type="checkbox" id={text} name={text}/>
       <StyledLabel htmlFor={text}>
         <StyledP>{text}</StyledP>
       </StyledLabel>

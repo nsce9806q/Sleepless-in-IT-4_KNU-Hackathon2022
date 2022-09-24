@@ -4,6 +4,7 @@ import ActivityCard from "../components/ActivityCard";
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
 import Checkboxpage from "../pages/Checkboxpage"
+import TodoList from "../components/TodoList";
 
 export default function ActivityInside() {
   let navigate = useNavigate();
@@ -12,7 +13,6 @@ export default function ActivityInside() {
     <Layout title="활동 페이지" hasBackButton>
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">활동</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={()=>{ navigate('/activity')}}>Outside</Nav.Link>
             <Nav.Link onClick={()=>{ navigate('/activity/inside')}}>Inside</Nav.Link>
@@ -21,7 +21,7 @@ export default function ActivityInside() {
       </Navbar>
 
     <Checkboxpage/>
-    
+    <TodoList/>
     </Layout>
   );
 }
