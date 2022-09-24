@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { THEME } from "../constants/colors";
-import { HomeIcon } from "./Icons";
+import { HomeIcon, ActivityIcon } from "./Icons";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function Footer() {
         질문
       </FooterItem>
       <FooterItem onClick={() => navigate("/activity")} selected={true}>
-        <HomeIcon />
+        <ActivityIcon />
         활동
       </FooterItem>
       <FooterItem onClick={() => navigate("/myhome")} selected={true}>

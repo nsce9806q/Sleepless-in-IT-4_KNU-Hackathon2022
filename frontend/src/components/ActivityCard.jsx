@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 export default function ActivityCard() {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '100%' }}>
       <Card.Img variant="top" src="/img/img1.jpg" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

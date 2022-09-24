@@ -3,9 +3,9 @@ import styled from "styled-components";
 import ActivityCard from "../components/ActivityCard";
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
+import Checkboxpage from "../pages/Checkboxpage"
 
-
-export default function Activity() {
+export default function ActivityInside() {
   let navigate = useNavigate();
 
   return (
@@ -20,19 +20,8 @@ export default function Activity() {
         </Container>
       </Navbar>
 
-      <div class="container text-center">
-        <div class="row row-cols-2 g-3" >
-          {
-              [1,2,3,4,5,6,7].map(()=>{
-                return(
-                  <>
-                    <div class="col-sm"><ActivityCard/></div>
-                  </>
-                )
-              })
-          }
-        </div>
-      </div>
+    <Checkboxpage/>
+    
     </Layout>
   );
 }

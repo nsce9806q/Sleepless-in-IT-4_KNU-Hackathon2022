@@ -13,4 +13,5 @@ export default function Mainpage() {
 
 const Main = styled.div`
   padding: 3rem;
+  font-size: 1.5rem;
 `;
