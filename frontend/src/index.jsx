@@ -3,9 +3,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
-import { AuthProvider } from "./contexts/AuthProvider";
 import { GlobalStyles } from "./commonStyles";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AuthProvider from "./contexts/AuthProvider";
+import AlertProvider from "./contexts/AlertProvider";
+import LoadingProvider from "./contexts/LoadingProvider";
 
 const mantineStyle = {
   fontFamily: "GangwonEdu_OTFBoldA, sans-serif",
@@ -17,11 +19,15 @@ root.render(
     <Router>
       <GlobalStyles />
       <MantineProvider theme={mantineStyle}>
-        <AuthProvider>
-          <Routes>
-            <Route path="/*" element={<App />} />
-          </Routes>
-        </AuthProvider>
+        <AlertProvider>
+          <LoadingProvider>
+            <AuthProvider>
+              <Routes>
+                <Route path="/*" element={<App />} />
+              </Routes>
+            </AuthProvider>
+          </LoadingProvider>
+        </AlertProvider>
       </MantineProvider>
     </Router>
   </React.StrictMode>

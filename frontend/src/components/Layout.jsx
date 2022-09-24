@@ -3,10 +3,20 @@ import Footer from "./Footer";
 import styled from "styled-components";
 import { THEME } from "../constants/colors";
 
-export default function Layout({ children, title, hasBackButton, hasFooter }) {
+export default function Layout({
+  children,
+  title,
+  hasBackButton,
+  onClickBackBtn,
+  hasFooter = true,
+}) {
   return (
     <Main>
-      <Header title={title} hasBackButton={hasBackButton} />
+      <Header
+        title={title}
+        hasBackButton={hasBackButton}
+        onClickBackBtn={onClickBackBtn}
+      />
       <Children>{children}</Children>
       <Footer hasFooter={hasFooter} />
     </Main>

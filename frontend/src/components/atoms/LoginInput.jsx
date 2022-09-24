@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { THEME } from "../../constants/colors";
 
-export default function Input({ type, value, setValue, placeholder }) {
+export default function LoginInput({ type, value, setValue, placeholder }) {
   return (
     <StyledInput
       type={type}
@@ -13,12 +13,14 @@ export default function Input({ type, value, setValue, placeholder }) {
 }
 
 const StyledInput = styled.input`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   color: black;
   text-align: left;
-  border: none;
-  border-bottom: 2px solid ${THEME.black400};
+  border: 2px solid ${THEME.black400};
+  border-radius: 50px;
+  padding: 0.5rem;
+  padding-left: 1rem;
   width: 18rem;
   transition: 0.5s;
   ::placeholder {
@@ -27,9 +29,7 @@ const StyledInput = styled.input`
   }
   &:focus {
     outline: none;
-    border-bottom: 2px solid ${THEME.primary};
+    border: 2px solid ${THEME.primary};
   }
-  letter-spacing: ${(p) => p.type && "0.15rem"};
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
 `;
