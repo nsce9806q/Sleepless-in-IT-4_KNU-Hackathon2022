@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sleeplessinit4.hanzip.common.exception.ParentMissionNotFoundException;
 import sleeplessinit4.hanzip.dto.ChildrenMissionDto;
 import sleeplessinit4.hanzip.dto.ParentMissionDto;
 import sleeplessinit4.hanzip.service.interfaces.ChildrenPageService;
@@ -27,8 +28,12 @@ public class ParentPageController {
 
     @GetMapping("/mission")
     public ResponseEntity<List<ParentMissionDto>> clearMission(@RequestParam Long parentId, @RequestParam Long missionId) {
-        List<ParentMissionDto> parentMissionDtoList = parentPageService.clearMission(parentId, missionId);
+        try {
+            List<ParentMissionDto> parentMissionDtoList = parentPageService.clearMission(parentId, missionId);
 
-        return new ResponseEntity<>(parentMissionDtoList, HttpStatus.OK);
+            return new ResponseEntity<>(parentMissionDtoList, HttpStatus.OK);
+        }catch (ParentMissionNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 }
