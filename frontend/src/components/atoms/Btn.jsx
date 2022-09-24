@@ -1,30 +1,31 @@
 import styled from "styled-components";
+import { THEME } from "../../constants/colors";
 
-export default function Input({ value, setValue, placeholder }) {
-  return (
-    <StyledInput
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      placeholder={placeholder}
-    />
-  );
+export default function Btn({ children, onClickBtn }) {
+  const handleClick = (e) => {
+    e.preventDefault();
+    onClickBtn();
+  };
+
+  return <StyledBtn onClick={handleClick}>{children}</StyledBtn>;
 }
 
-const StyledInput = styled.input`
-  /* font-size: 0.9rem;
+const StyledBtn = styled.button`
+  font-size: 1.3rem;
   line-height: 2rem;
-  color: black;
+  color: white;
   text-align: left;
-  border: none;
-  border-bottom: 2px solid #d2d2d2;
+  border: 2px solid ${THEME.primary};
+  background-color: ${THEME.primary};
+  text-align: center;
+  border-radius: 50px;
+  padding: 0.5rem;
   width: 18rem;
-  ::placeholder {
-    color: #d2d2d2;
-    text-align: left;
-  }
-  &:focus {
+  transition: 0.3s;
+  &:hover {
     outline: none;
+    border: 2px solid ${THEME.darker};
+    background-color: ${THEME.darker};
   }
-  margin-top: 2rem;
-  margin-bottom: 2rem; */
+  margin: 1rem 0;
 `;
