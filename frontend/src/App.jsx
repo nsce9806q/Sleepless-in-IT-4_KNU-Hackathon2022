@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Mainpage from "./pages/Mainpage";
 import Question from "./pages/Question";
@@ -9,11 +9,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Mainpage />} />
+        <Route path="/" element={<Navigate to="/main" />} />
+        <Route path="/main" element={<Mainpage />} />
         <Route path="/question" element={<Question />} />
         <Route path="/activity" element={<Activity />} />
         <Route path="/myhome" element={<Myhome />} />
-        
       </Routes>
     </>
   );
