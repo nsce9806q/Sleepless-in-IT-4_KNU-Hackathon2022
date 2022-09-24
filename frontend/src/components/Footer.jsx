@@ -1,26 +1,40 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { THEME } from "../constants/colors";
-import { HomeIcon } from "./Icons";
+import { HomeIcon, QuestionIcon, ActivityIcon, ProfileIcon } from "./Icons";
+import usePath from "../hooks/usePath";
 
 export default function Footer() {
   const navigate = useNavigate();
+  const { getNthPath } = usePath();
   return (
     <Main>
-      <FooterItem onClick={() => navigate("/")} selected={false}>
+      <FooterItem
+        onClick={() => navigate("/main")}
+        selected={getNthPath(1) === "main"}
+      >
         <HomeIcon />
         메인
       </FooterItem>
-      <FooterItem onClick={() => navigate("/question")} selected={true}>
-        <HomeIcon />
+      <FooterItem
+        onClick={() => navigate("/question")}
+        selected={getNthPath(1) === "question"}
+      >
+        <QuestionIcon />
         질문
       </FooterItem>
-      <FooterItem onClick={() => navigate("/activity")} selected={true}>
-        <HomeIcon />
+      <FooterItem
+        onClick={() => navigate("/activity")}
+        selected={getNthPath(1) === "activity"}
+      >
+        <ActivityIcon />
         활동
       </FooterItem>
-      <FooterItem onClick={() => navigate("/myhome")} selected={true}>
-        <HomeIcon />
+      <FooterItem
+        onClick={() => navigate("/myhome")}
+        selected={getNthPath(1) === "myhome"}
+      >
+        <ProfileIcon />
         마이홈
       </FooterItem>
     </Main>
@@ -53,6 +67,6 @@ const FooterItem = styled.button`
   align-items: center;
   height: 4rem;
   gap: 4px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: ${(p) => (p.selected ? THEME.darker : THEME.black400)};
 `;

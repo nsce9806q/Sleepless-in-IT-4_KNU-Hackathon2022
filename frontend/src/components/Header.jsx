@@ -44,14 +44,13 @@ const Main = styled.header`
   color: ${THEME.black900};
   font-size: 20px;
   font-weight: 700;
+  vertical-align: baseline;
   gap: 0.5rem;
-  svg {
-    margin-top: 4px;
-  }
 `;
 
 const Back = styled.button`
   background: none;
   border: none;
   padding: 0;
+  margin-top: -2px;
 `;
