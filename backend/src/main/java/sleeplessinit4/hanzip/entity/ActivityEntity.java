@@ -28,6 +28,9 @@ public class ActivityEntity extends BaseTimeEntity {
     @Column(length = 20)
     private String place;
 
+    @Column(length = 20)
+    private String category;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="house_id")
     private HouseEntity house;

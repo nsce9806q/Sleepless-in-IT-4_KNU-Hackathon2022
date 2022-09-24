@@ -22,5 +22,5 @@ public class ChildrenMissionDto {
     private String missionTitle;
     private String missionContent;
     private Long reward;
-    private IsComplete isComplete;
+    private Boolean isComplete;
 }

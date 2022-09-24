@@ -25,7 +25,19 @@ public class HouseEntity extends BaseTimeEntity {
 
     //경험치 column
     @Column(length = 200)
-    private Long Exp = 0L;
+    @Builder.Default
+    private Long exp = 0L;
+
+    @Column(length = 10)
+    @Builder.Default
+    private Long activityPoint = 0L;
+
+    @Column(length = 10)
+    @Builder.Default
+    private Long communicationPoint = 0L;
+
+    @Column(length = 10)
+    private Long randomCode;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="parent_id")
@@ -40,4 +52,14 @@ public class HouseEntity extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ActivityEntity> activityList;
+
+    public void increaseExp(Long reward) {
+        this.exp += reward;
+    }
+    public void increaseActivityPoint(Long activityPoint) {
+        this.activityPoint += activityPoint;
+    }
+    public void increaseCommunicationPoint(Long communicationPoint) {
+        this.communicationPoint += communicationPoint;
+    }
 }

@@ -32,15 +32,21 @@ public class ParentMissionEntity extends BaseTimeEntity {
     @Column(length = 10)
     private Long reward;
 
+    @Column(length = 10)
+    private Long activityPoint;
+
+    @Column(length = 10)
+    private Long communicationPoint;
+
     @Column
-    @Enumerated(EnumType.STRING)
-    private IsComplete isComplete = IsComplete.ImComplete;
+    @Builder.Default
+    private Boolean isComplete = Boolean.FALSE;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="parent_id")
     private ParentEntity parent;
 
     public void missionComplete() {
-        this.isComplete = IsComplete.Complete;
+        this.isComplete = Boolean.TRUE;
     }
 }
