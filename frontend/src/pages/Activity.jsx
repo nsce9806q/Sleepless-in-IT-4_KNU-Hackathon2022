@@ -9,7 +9,6 @@ import usePath from "../hooks/usePath";
 
 export default function Activity() {
   let navigate = useNavigate();
-  const { getNthPath } = usePath();
 
   return (
     <Layout title="활동 페이지" hasBackButton>

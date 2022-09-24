@@ -143,9 +143,9 @@ export default function TodoList() {
 							<Title
 								sx={theme => ({
 									fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-									fontWeight: 900,
-								})}>
-                                Todo
+									fontWeight: 700,
+								})} color={'#5C5F66'}>
+                                일정 보기
 							</Title>
 							<ActionIcon
 								color={'blue'}
@@ -185,7 +185,7 @@ export default function TodoList() {
 							})
 						) : (
 							<Text size={'lg'} mt={'md'} color={'dimmed'}>
-								천리길도 한 걸음부터
+								가족과 함께하는 동행
 							</Text>
 						)}
 						<Button
