@@ -1,10 +1,11 @@
 package sleeplessinit4.hanzip.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sleeplessinit4.hanzip.common.enums.IsComplete;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -15,14 +16,12 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChildrenMissionDto {
+public class ActivityDto {
 
-    private Long childrenMissionId;
-    private Long missionLevel;
-    private String missionTitle;
-    private String missionContent;
-    private Long reward;
-    private Long activityPoint;
-    private Long communicationPoint;
-    private Boolean isComplete;
+    private Long activityId;
+    private String activityTitle;
+    private String activityContent;
+    private String place;
+    private String category;
+
 }
