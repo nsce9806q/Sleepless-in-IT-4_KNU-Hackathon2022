@@ -20,7 +20,7 @@ public class ParentPageController {
     private final ParentPageService parentPageService;
 
     @GetMapping("/{parentId}")
-    public ResponseEntity<List<ParentMissionDto>> viewChildrenMission(@PathVariable Long parentId) {
+    public ResponseEntity<List<ParentMissionDto>> viewParentMission(@PathVariable Long parentId) {
         List<ParentMissionDto> parentMissionDtoList = parentPageService.viewParentMission(parentId);
 
         return new ResponseEntity<>(parentMissionDtoList, HttpStatus.OK);

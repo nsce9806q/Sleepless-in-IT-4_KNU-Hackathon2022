@@ -75,7 +75,7 @@ public class ParentPageServiceImpl implements ParentPageService {
 
         //집 경험치 증가
         HouseEntity houseEntity = houseRepository.findByParentId(parentId);
-        houseEntity.increaseExp(parentMission.getReward());
+        houseEntity.clearParentMission(parentMission);
 
         entityManager.flush();
 

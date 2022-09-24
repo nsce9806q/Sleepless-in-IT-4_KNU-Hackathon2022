@@ -7,8 +7,10 @@ import sleeplessinit4.hanzip.common.exception.ChildrenMissionNotFoundException;
 import sleeplessinit4.hanzip.dto.ChildrenMissionDto;
 import sleeplessinit4.hanzip.entity.ChildrenEntity;
 import sleeplessinit4.hanzip.entity.ChildrenMissionEntity;
+import sleeplessinit4.hanzip.entity.HouseEntity;
 import sleeplessinit4.hanzip.repository.ChildrenMissionRepository;
 import sleeplessinit4.hanzip.repository.ChildrenRepository;
+import sleeplessinit4.hanzip.repository.HouseRepository;
 import sleeplessinit4.hanzip.service.interfaces.ChildrenPageService;
 
 import javax.persistence.EntityManager;
@@ -22,8 +24,10 @@ import java.util.Optional;
 public class ChildrenPageServiceImpl implements ChildrenPageService {
 
     private final EntityManager entityManager;
+
     private final ChildrenMissionRepository childrenMissionRepository;
     private final ChildrenRepository childrenRepository;
+    private final HouseRepository houseRepository;
 
     /**
      * 자녀 사용자의 미션 페이지를 보여주는 메서드
@@ -62,8 +66,13 @@ public class ChildrenPageServiceImpl implements ChildrenPageService {
    public List<ChildrenMissionDto> clearMission (Long childrenId, Long missionId) {
         Optional<ChildrenMissionEntity> optionalChildrenMission = childrenMissionRepository.findById(missionId);
 
+        //미션 Complete 로 변경해 주기
         ChildrenMissionEntity childrenMission = optionalChildrenMission.orElseThrow(ChildrenMissionNotFoundException::new);
         childrenMission.missionComplete();
+
+        //집 경험치 증가
+        HouseEntity houseEntity = houseRepository.findByChildrenId(childrenId);
+        houseEntity.clearChildrenMission(childrenMission);
 
         entityManager.flush();
 

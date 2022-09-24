@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Parent;
 import sleeplessinit4.hanzip.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
@@ -61,5 +62,17 @@ public class HouseEntity extends BaseTimeEntity {
     }
     public void increaseCommunicationPoint(Long communicationPoint) {
         this.communicationPoint += communicationPoint;
+    }
+
+    public void clearParentMission(ParentMissionEntity parentMission) {
+        increaseExp(parentMission.getReward());
+        increaseActivityPoint(parentMission.getActivityPoint());
+        increaseCommunicationPoint(parentMission.getCommunicationPoint());
+    }
+
+    public void clearChildrenMission(ChildrenMissionEntity childrenMission) {
+        increaseExp(childrenMission.getReward());
+        increaseActivityPoint(childrenMission.getActivityPoint());
+        increaseCommunicationPoint(childrenMission.getCommunicationPoint());
     }
 }

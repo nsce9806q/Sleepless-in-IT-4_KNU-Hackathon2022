@@ -15,16 +15,17 @@ import sleeplessinit4.hanzip.service.interfaces.MainPageService;
 @RequestMapping("/main")
 public class MainPageController {
 
-  private final MainPageService mainPageService;
+    private final MainPageService mainPageService;
 
-  @GetMapping("/{houseId}")
-  public ResponseEntity<HouseDto> viewMain(@PathVariable Long houseId) {
-    try {
-      HouseDto houseDto = mainPageService.viewMain(houseId);
-      return new ResponseEntity<>(houseDto, HttpStatus.OK);
-    }catch(HouseNotFoundException e) {
-      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @GetMapping("/{houseId}")
+    public ResponseEntity<HouseDto> viewMain(@PathVariable Long houseId) {
+        try {
+          HouseDto houseDto = mainPageService.viewMain(houseId);
+
+          return new ResponseEntity<>(houseDto, HttpStatus.OK);
+        }catch(HouseNotFoundException e) {
+          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
-  }
 
 }
