@@ -13,32 +13,29 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name="house")
 public class HouseEntity extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long houseId;
 
-    @Column
+    @Column(length = 20)
     private String houseName;
 
     //경험치 column
-    @Column
+    @Column(length = 200)
     private Long Exp;
 
-    @OneToOne
-    @JoinColumn(name="furniture_id")
-    private FurnitureEntity furniture;
-
-    @OneToOne
-    @JoinColumn(name="parent_id")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "house", fetch = FetchType.LAZY)
     private ParentEntity parent;
 
-    @OneToOne
-    @JoinColumn(name="children_id")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "house", fetch = FetchType.LAZY)
     private ChildrenEntity children;
 
-    @OneToMany(mappedBy = "house")
+    @OneToOne(mappedBy = "house", fetch = FetchType.LAZY)
+    private FurnitureEntity furniture;
+
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ActivityEntity> activityList;
 }

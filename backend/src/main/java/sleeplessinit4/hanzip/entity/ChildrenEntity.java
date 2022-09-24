@@ -10,25 +10,26 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name="children")
 public class ChildrenEntity extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long childrenId;
 
-    @Column
+    @Column(length = 20)
     private String loginId;
 
-    @Column
+    @Column(length = 20)
     private String password;
 
-    @Column
+    @Column(length = 12)
     private String phoneNumber;
 
-    @OneToOne(mappedBy = "children")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="house_id")
     private HouseEntity house;
 
-    @OneToMany(mappedBy = "children")
+    @OneToMany(mappedBy = "children", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ChildrenMissionEntity> childrenMissionList;
 }

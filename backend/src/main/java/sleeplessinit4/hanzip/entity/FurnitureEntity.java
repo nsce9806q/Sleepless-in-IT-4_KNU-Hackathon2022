@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import sleeplessinit4.hanzip.common.BaseTimeEntity;
+import sleeplessinit4.hanzip.common.enums.isExist;
 
 import javax.persistence.*;
 
@@ -12,28 +13,35 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name="furniture")
 public class FurnitureEntity extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long furnitureId;
 
-    @Column
-    private Boolean window = false;
+    @Column(length = 20)
+    @Enumerated(EnumType.STRING)
+    private isExist glassWindow = isExist.NonExistent;
 
-    @Column
-    private Boolean table = false;
+    @Column(length = 20)
+    @Enumerated(EnumType.STRING)
+    private isExist kitchenTable = isExist.NonExistent;
 
-    @Column
-    private Boolean tv = false;
+    @Column(length = 20)
+    @Enumerated(EnumType.STRING)
+    private isExist tv = isExist.NonExistent;
 
-    @Column
-    private Boolean sofa = false;
+    @Column(length = 20)
+    @Enumerated(EnumType.STRING)
+    private isExist sofa = isExist.NonExistent;
 
-    @Column
-    private Boolean photoFrame = false;
+    @Column(length = 20)
+    @Enumerated(EnumType.STRING)
+    private isExist photoFrame = isExist.NonExistent;
 
-    @OneToOne(mappedBy = "furniture")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "house_id")
     private HouseEntity house;
+
 }

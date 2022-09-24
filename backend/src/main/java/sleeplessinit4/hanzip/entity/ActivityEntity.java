@@ -12,23 +12,23 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name="activity")
 public class ActivityEntity extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long activityId;
 
-    @Column
+    @Column(length = 20)
     private String activityTitle;
 
-    @Column
+    @Column(length = 200)
     private String activityContent;
 
-    @Column
+    @Column(length = 20)
     private String place;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="house_id")
     private HouseEntity house;
 }
