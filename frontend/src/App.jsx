@@ -1,5 +1,8 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Mainpage from "./pages/Mainpage";
 import Question from "./pages/Question";
 import Activity from "./pages/Activity";
@@ -9,7 +12,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navigate to="/main" />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/main" element={<Mainpage />} />
         <Route path="/question" element={<Question />} />
         <Route path="/activity" element={<Activity />} />

@@ -1,7 +1,8 @@
 export const THEME = {
-  primary: "#FCDE58",
-  darker: "#FCBA58",
-  lighter: "#FFF6D2",
+  primary: "#FAF45A",
+  secondary: "#A8FF86",
+  thirdcolor: "#68DFCA", //
+  fourthcolor: "#8773E6", // 보랏빛
   black100: "#F4F4F4",
   black200: "#EDEDED",
   black300: "#E6E6E6",

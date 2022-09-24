@@ -4,9 +4,12 @@ import { THEME } from "../constants/colors";
 import { HomeIcon, QuestionIcon, ActivityIcon, ProfileIcon } from "./Icons";
 import usePath from "../hooks/usePath";
 
-export default function Footer() {
+export default function Footer({ hasFooter }) {
   const navigate = useNavigate();
   const { getNthPath } = usePath();
+
+  if (!hasFooter) return null;
+
   return (
     <Main>
       <FooterItem
