@@ -3,6 +3,7 @@ import Img from "../../components/atoms/Img";
 import Input from "../../components/atoms/Input";
 import Layout from "../../components/Layout";
 import { THEME } from "../../constants/colors";
+import useLoading from "../../hooks/useLoading";
 
 export default function LastPage({
   homename,
@@ -14,6 +15,7 @@ export default function LastPage({
   userType,
   setPage,
 }) {
+  const { load, endLoad } = useLoading();
   return (
     <Layout
       title={"이전"}
@@ -77,7 +79,11 @@ export default function LastPage({
           <FooterButton
             disabled={homecode === ""}
             onClick={() => {
-              setPage((p) => p + 1);
+              load();
+              setTimeout(() => {
+                endLoad();
+                setPage((p) => p + 1);
+              }, 500);
             }}
           >
             다음

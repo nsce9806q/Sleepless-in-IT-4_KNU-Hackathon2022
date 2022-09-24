@@ -53,7 +53,7 @@ export default function Login() {
     <Layout hasFooter={false}>
       <FormWrapper onSubmit={handleSubmit}>
         <Img size="15rem" src={"MainImg.png"} />
-        <StyledH1>한집</StyledH1>
+        <StyledH1>한 집</StyledH1>
         <StyledH2>Han-Zip</StyledH2>
         <LoginInput
           value={userid}
@@ -97,7 +97,8 @@ const FormWrapper = styled.form`
 `;
 
 const StyledH1 = styled.h1`
-  font-size: 2.5rem;
+  font-family: "GangwonEduPowerExtraBoldA";
+  font-size: 3.2rem;
   font-weight: bold;
   margin: 1rem 0;
 `;

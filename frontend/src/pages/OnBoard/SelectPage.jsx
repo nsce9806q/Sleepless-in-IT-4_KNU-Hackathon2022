@@ -93,7 +93,7 @@ const HeaderTitle = styled.p`
 `;
 
 const ThirdBody = styled.div`
-  margin-top: 20vh;
+  margin-top: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
