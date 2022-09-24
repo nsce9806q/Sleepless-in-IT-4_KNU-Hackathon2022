@@ -5,10 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 import { AuthProvider } from "./contexts/AuthProvider";
 import { GlobalStyles } from "./commonStyles";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const mantineStyle = {
-  // fontFamily: "GmarketSansMedium, sans-serif",
+  fontFamily: "GangwonEdu_OTFBoldA, sans-serif",
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
