@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Input from "../../components/atoms/Input";
 import Layout from "../../components/Layout";
 import { THEME } from "../../constants/colors";
+import useLoading from "../../hooks/useLoading";
 
 export default function SignupPage({
   userid,
@@ -12,6 +13,7 @@ export default function SignupPage({
   setRepsword,
   setPage,
 }) {
+  const { load, endLoad } = useLoading();
   return (
     <Layout
       title={"이전"}
@@ -46,7 +48,11 @@ export default function SignupPage({
         <FooterButton
           disabled={userid === "" || psword === "" || repsword === ""}
           onClick={() => {
-            setPage((p) => p + 1);
+            load();
+            setTimeout(() => {
+              endLoad();
+              setPage((p) => p + 1);
+            }, 1000);
           }}
         >
           다음

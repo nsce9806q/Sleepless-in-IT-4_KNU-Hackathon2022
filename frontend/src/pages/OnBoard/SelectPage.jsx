@@ -1,11 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Img from "../../components/atoms/Img";
+import { ChildIcon, ParentIcon } from "../../components/Icons";
 import Layout from "../../components/Layout";
 import { THEME } from "../../constants/colors";
+import useLoading from "../../hooks/useLoading";
 
 export default function SelectPage({ userType, setUserType, setPage }) {
+  const navigate = useNavigate();
+  const { load, endLoad } = useLoading();
   return (
-    <Layout title={"로그인 페이지로"} hasBackButton hasFooter={false}>
+    <Layout
+      title={"로그인 페이지로"}
+      onClickBackBtn={() => navigate("/login")}
+      hasBackButton
+      hasFooter={false}
+    >
       <ThirdHeader>
         <WelcomeTitle>한집에 오신것을 환영해요!</WelcomeTitle>
         <HeaderTitle>어떤 역할로 활동할지 선택해주세요!</HeaderTitle>
@@ -22,7 +32,8 @@ export default function SelectPage({ userType, setUserType, setPage }) {
           }}
         >
           {/* <ChildCharacter active={userType === "child"} /> */}
-          <Img src={"HoBanCow.png"} />
+          {/* <Img src={"HoBanCow.png"} /> */}
+          <ChildIcon />
           <CardText active={userType === "child"}>아이입니다</CardText>
         </Card>
         <Card
@@ -35,7 +46,7 @@ export default function SelectPage({ userType, setUserType, setPage }) {
             }
           }}
         >
-          <Img src={"HoBanCow.png"} />
+          <ParentIcon />
           <CardText active={userType === "parent"}>부모입니다</CardText>
         </Card>
       </ThirdBody>
@@ -43,7 +54,11 @@ export default function SelectPage({ userType, setUserType, setPage }) {
         <FooterButton
           disabled={Number(userType.length) === 0}
           onClick={() => {
-            setPage((p) => p + 1);
+            load();
+            setTimeout(() => {
+              endLoad();
+              setPage((p) => p + 1);
+            }, 500);
           }}
         >
           다음
@@ -78,7 +93,7 @@ const HeaderTitle = styled.p`
 `;
 
 const ThirdBody = styled.div`
-  margin-top: 5rem;
+  margin-top: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +119,7 @@ const CardText = styled.p`
   width: 6.15rem;
   left: 50%;
   transform: translate(-50%, 0);
-  bottom: 0;
+  bottom: 1.5rem;
   font-size: 25px;
   line-height: 26px;
   display: flex;
@@ -128,7 +143,7 @@ const FooterButton = styled.button`
   height: 3rem;
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 21px;
   text-align: center;
   color: #ffffff;
