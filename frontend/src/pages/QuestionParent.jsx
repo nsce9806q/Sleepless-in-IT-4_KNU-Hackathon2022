@@ -2,14 +2,14 @@ import Layout from "../components/Layout";
 import styled from "styled-components";
 import Checkboxpage from "../pages/Checkboxpage"
 import { useState } from 'react';
-import ChildData from '../Data/ChildData'
+import ParentData from '../Data/ParentData'
 
 export default function QuestionCild() {
-  let [Data] =useState(ChildData)
+  let [Data] =useState(ParentData)
   return (
     <Layout title="오늘의 질문" hasBackButton>
       <Main>오늘의 질문</Main>
-      <Checkboxpage Data={Data}/>
+      <Checkboxpage Data={Data} img={false}/>
     </Layout>
 
     
