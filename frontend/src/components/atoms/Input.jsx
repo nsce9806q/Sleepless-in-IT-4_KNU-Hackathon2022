@@ -15,6 +15,7 @@ export default function Input({ type, value, setValue, placeholder }) {
 const StyledInput = styled.input`
   font-size: 1.3rem;
   line-height: 2rem;
+  background-color: transparent;
   color: black;
   text-align: left;
   border: none;

@@ -9,6 +9,7 @@ import useLoading from "../hooks/useLoading";
 import { useAlert } from "../hooks/useAlert";
 import SelectPage from "./OnBoard/SelectPage";
 import SignupPage from "./OnBoard/SignupPage";
+import LastPage from "./OnBoard/LastPage";
 
 export default function Signup() {
   const [page, setPage] = useState(0);
@@ -58,7 +59,18 @@ export default function Signup() {
 
   //
   if (page === 2) {
-    //
+    return (
+      <LastPage
+        homename={homename}
+        setHomename={setHomename}
+        childname={childname}
+        setChildname={setChildname}
+        homecode={homecode}
+        setHomecode={setHomecode}
+        userType={userType}
+        setPage={setPage}
+      />
+    );
   }
 
   if (page === 3) {

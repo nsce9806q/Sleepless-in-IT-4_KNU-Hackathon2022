@@ -14,4 +14,5 @@ export default function Img({ src, size, ratio, alt = "image" }) {
 const StyledImg = styled.img`
   width: ${(p) => p.size || "100%"};
   aspect-ratio: ${(p) => p.ratio || "1 / 1"};
+  z-index: 100000;
 `;

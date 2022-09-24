@@ -61,9 +61,11 @@ const ThirdHeader = styled.div`
 `;
 
 const WelcomeTitle = styled.p`
+  line-height: 3rem;
   text-align: center;
   color: ${THEME.primary};
   font-size: 1.5rem;
+  margin-top: 1rem;
 `;
 
 const HeaderTitle = styled.p`
