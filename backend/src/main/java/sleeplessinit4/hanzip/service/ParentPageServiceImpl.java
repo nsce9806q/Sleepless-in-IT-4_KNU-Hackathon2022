@@ -59,6 +59,12 @@ public class ParentPageServiceImpl implements ParentPageService {
         return parentMissionDtoList;
     }
 
+    /**
+     *
+     * @param parentId 미션을 완료한 부모 id
+     * @param missionId
+     * @return
+     */
     @Override
     public List<ParentMissionDto> clearMission (Long parentId, Long missionId) {
         Optional<ParentMissionEntity> optionalParentMission = parentMissionRepository.findById(missionId);
