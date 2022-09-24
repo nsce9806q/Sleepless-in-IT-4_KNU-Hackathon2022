@@ -26,6 +26,9 @@ public class ChildrenEntity extends BaseTimeEntity {
     @Column(length = 12)
     private String phoneNumber;
 
+    @Column(length = 20)
+    private String nickName;
+
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "children")
     private HouseEntity house;
 
