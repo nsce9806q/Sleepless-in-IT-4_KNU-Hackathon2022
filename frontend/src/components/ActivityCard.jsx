@@ -12,7 +12,7 @@ export default function ActivityCard() {
           bulk of the card's content.
         </Card.Text>
         <br/>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="Danger">Go somewhere</Button>
       </Card.Body>
     </Card>
   );

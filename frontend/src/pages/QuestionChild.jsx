@@ -9,7 +9,7 @@ export default function QuestionCild() {
   return (
     <Layout title="오늘의 질문" hasBackButton>
       <Main>오늘의 질문</Main>
-      <Checkboxpage Data={Data}/>
+      <Checkboxpage Data={Data} img={true}/>
     </Layout>
 
     
