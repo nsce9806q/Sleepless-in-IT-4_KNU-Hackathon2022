@@ -2,13 +2,18 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { THEME } from "../constants/colors";
 
-export default function Header({ title, hasBackButton }) {
+export default function Header({ title, hasBackButton, onClickBackBtn }) {
   const navigate = useNavigate();
+
+  const handleClickBackBtn = () => {
+    if (onClickBackBtn) onClickBackBtn();
+    else navigate(-1);
+  };
 
   return (
     <Main>
       {hasBackButton && (
-        <Back onClick={() => navigate(-1)}>
+        <Back onClick={handleClickBackBtn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"

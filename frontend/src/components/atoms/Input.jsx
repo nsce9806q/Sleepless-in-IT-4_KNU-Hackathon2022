@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { THEME } from "../../constants/colors";
 
-export default function Input({ value, setValue, placeholder }) {
+export default function Input({ type, value, setValue, placeholder }) {
   return (
     <StyledInput
+      type={type}
       value={value}
       onChange={(e) => setValue(e.target.value)}
       placeholder={placeholder}
@@ -12,7 +13,7 @@ export default function Input({ value, setValue, placeholder }) {
 }
 
 const StyledInput = styled.input`
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 2rem;
   color: black;
   text-align: left;
@@ -28,6 +29,7 @@ const StyledInput = styled.input`
     outline: none;
     border-bottom: 2px solid ${THEME.primary};
   }
+  letter-spacing: ${(p) => p.type && "0.15rem"};
   margin-top: 2rem;
   margin-bottom: 2rem;
 `;
