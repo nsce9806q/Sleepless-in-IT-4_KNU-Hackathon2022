@@ -25,7 +25,7 @@ public class HouseEntity extends BaseTimeEntity {
 
     //경험치 column
     @Column(length = 200)
-    private Long Exp;
+    private Long Exp = 0L;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "house", fetch = FetchType.LAZY)
     private ParentEntity parent;

@@ -39,4 +39,8 @@ public class ParentMissionEntity extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="parent_id")
     private ParentEntity parent;
+
+    public void missionComplete() {
+        this.isComplete = IsComplete.Complete;
+    }
 }
