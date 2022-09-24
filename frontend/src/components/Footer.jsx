@@ -11,15 +11,15 @@ export default function Footer() {
         <HomeIcon />
         메인
       </FooterItem>
-      <FooterItem onClick={() => navigate("/Question")} selected={true}>
+      <FooterItem onClick={() => navigate("/question")} selected={true}>
         <HomeIcon />
         질문
       </FooterItem>
-      <FooterItem onClick={() => navigate("/Activity")} selected={true}>
+      <FooterItem onClick={() => navigate("/activity")} selected={true}>
         <HomeIcon />
         활동
       </FooterItem>
-      <FooterItem onClick={() => navigate("/Myhome")} selected={true}>
+      <FooterItem onClick={() => navigate("/myhome")} selected={true}>
         <HomeIcon />
         마이홈
       </FooterItem>
