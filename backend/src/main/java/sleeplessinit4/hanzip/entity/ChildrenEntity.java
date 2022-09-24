@@ -26,8 +26,7 @@ public class ChildrenEntity extends BaseTimeEntity {
     @Column(length = 12)
     private String phoneNumber;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="house_id")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "children")
     private HouseEntity house;
 
     @OneToMany(mappedBy = "children", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

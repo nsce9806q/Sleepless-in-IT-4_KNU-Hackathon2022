@@ -27,10 +27,12 @@ public class HouseEntity extends BaseTimeEntity {
     @Column(length = 200)
     private Long Exp = 0L;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "house", fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="parent_id")
     private ParentEntity parent;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "house", fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="children_id")
     private ChildrenEntity children;
 
     @OneToOne(mappedBy = "house", fetch = FetchType.LAZY)
