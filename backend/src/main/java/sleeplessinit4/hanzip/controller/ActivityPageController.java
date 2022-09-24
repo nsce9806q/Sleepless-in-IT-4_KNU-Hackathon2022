@@ -1,5 +1,7 @@
 package sleeplessinit4.hanzip.controller;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,14 @@ public class ActivityPageController {
 
     private final ActivityPageService activityPageService;
 
+    @ApiOperation(
+            value = "활동 페이지 조회"
+            , notes = "houseId를 통해 활동 페이지를 조회한다.")
+    @ApiImplicitParam(
+            name = "houseId"
+            , value = "집 아이디"
+            , dataType = "Long"
+            , paramType = "query")
     @GetMapping
     public ResponseEntity<List<ActivityDto>> viewActivityList(@RequestParam Long houseId) {
         List<ActivityDto> activityDtoList = activityPageService.viewActivityList(houseId);

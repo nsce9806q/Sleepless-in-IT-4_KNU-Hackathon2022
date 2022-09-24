@@ -1,5 +1,7 @@
 package sleeplessinit4.hanzip.controller;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,14 @@ public class MainPageController {
 
     private final MainPageService mainPageService;
 
+    @ApiOperation(
+            value = "메인 페이지 조회"
+            , notes = "houseId를 통해 메인 페이지(집)를 조회한다.")
+    @ApiImplicitParam(
+            name = "houseId"
+            , value = "집 아이디"
+            , dataType = "Long"
+            , paramType = "path")
     @GetMapping("/{houseId}")
     public ResponseEntity<HouseDto> viewMain(@PathVariable Long houseId) {
         try {
