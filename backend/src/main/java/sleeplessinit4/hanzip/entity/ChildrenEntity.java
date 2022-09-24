@@ -1,7 +1,7 @@
 package sleeplessinit4.hanzip.entity;
 
 import lombok.*;
-import sleeplessinit4.hanzip.common.BaseTimeEntity;
+import sleeplessinit4.hanzip.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
 import java.util.List;

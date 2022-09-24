@@ -1,4 +1,4 @@
-package sleeplessinit4.hanzip.common;
+package sleeplessinit4.hanzip.common.entity;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

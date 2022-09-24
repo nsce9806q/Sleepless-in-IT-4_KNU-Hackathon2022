@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sleeplessinit4.hanzip.common.BaseTimeEntity;
+import sleeplessinit4.hanzip.common.entity.BaseTimeEntity;
 import sleeplessinit4.hanzip.common.enums.IsComplete;
 
 import javax.persistence.*;
@@ -40,4 +40,7 @@ public class ChildrenMissionEntity extends BaseTimeEntity {
     @JoinColumn(name="children_id")
     private ChildrenEntity children;
 
+    public void missionComplete() {
+        this.isComplete = IsComplete.Complete;
+    }
 }
