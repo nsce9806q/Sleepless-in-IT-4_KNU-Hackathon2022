@@ -1,5 +1,7 @@
 package sleeplessinit4.hanzip.controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Response;
@@ -17,6 +19,14 @@ import sleeplessinit4.hanzip.service.interfaces.MainPageService;
 @RequestMapping("/main")
 public class MainPageController {
 
+  @GetMapping("/")
+  public ResponseEntity<Map<String,Object>> root(){
+    Map<String,Object> response = new HashMap<>();
+    response.put("hello","world");
+
+    return ResponseEntity.ok().body(response);
+  }
+  
     private final MainPageService mainPageService;
 
     @ApiOperation(
@@ -37,5 +47,4 @@ public class MainPageController {
           return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
-
 }
