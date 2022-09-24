@@ -1,13 +1,8 @@
 import styled from "styled-components";
 import { THEME } from "../../constants/colors";
 
-export default function Btn({ children, onClickBtn }) {
-  const handleClick = (e) => {
-    e.preventDefault();
-    onClickBtn();
-  };
-
-  return <StyledBtn onClick={handleClick}>{children}</StyledBtn>;
+export default function Btn({ children }) {
+  return <StyledBtn>{children}</StyledBtn>;
 }
 
 const StyledBtn = styled.button`

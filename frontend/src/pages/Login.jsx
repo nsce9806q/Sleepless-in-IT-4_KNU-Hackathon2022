@@ -5,16 +5,54 @@ import Btn from "../components/atoms/Btn";
 import Img from "../components/atoms/Img";
 import styled from "styled-components";
 import { THEME } from "../constants/colors";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useLoading from "../hooks/useLoading";
+import { useAlert } from "../hooks/useAlert";
+import { apiLogin } from "../apis/users";
 
 export default function Login() {
   const [userid, setUserid] = useState("");
   const [psword, setPsword] = useState("");
+  const navigate = useNavigate();
+
+  const { load, endLoad } = useLoading();
+  const { push } = useAlert();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    load();
+    try {
+      // TODO: axios
+      // const [data, status] =  await apiLogin({userid, psword});
+      // if (result.data.data) {
+      if (false) {
+        // storeToken(result.data.data.token);
+        // load();
+        // setTimeout(() => {
+        //   navigate("/main");
+        // }, 3000);
+      } else {
+        endLoad();
+        push({
+          message: "아이디와 비밀번호를 확인해주세요.",
+          buttonText: "확인",
+          onClose: () => {},
+        });
+      }
+    } catch (e) {
+      endLoad();
+      push({
+        message: "아이디와 비밀번호를 확인해주세요.",
+        buttonText: "확인",
+        onClose: () => {},
+      });
+    }
+  };
 
   return (
     <Layout hasFooter={false}>
-      <FormWrapper>
-        <Img src={"MainImg.png"} alt="home" />
+      <FormWrapper onSubmit={handleSubmit}>
+        <Img size="15rem" src={"MainImg.png"} />
         <StyledH1>한집</StyledH1>
         <StyledH2>Han-Zip</StyledH2>
         <LoginInput
@@ -23,6 +61,7 @@ export default function Login() {
           placeholder={"아이디"}
         />
         <LoginInput
+          type="password"
           value={psword}
           setValue={setPsword}
           placeholder={"비밀번호"}

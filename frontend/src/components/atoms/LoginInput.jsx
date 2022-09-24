@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { THEME } from "../../constants/colors";
 
-export default function LoginInput({ value, setValue, placeholder }) {
+export default function LoginInput({ type, value, setValue, placeholder }) {
   return (
     <StyledInput
+      type={type}
       value={value}
       onChange={(e) => setValue(e.target.value)}
       placeholder={placeholder}

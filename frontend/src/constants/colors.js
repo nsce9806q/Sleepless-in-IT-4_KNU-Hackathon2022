@@ -14,4 +14,6 @@ export const THEME = {
   black700: "#999999",
   black800: "#6D6D6D",
   black900: "#3C3C3C",
+  boxshadow:
+    "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
 };
