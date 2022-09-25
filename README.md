@@ -1,6 +1,10 @@
 # 2022 대구를 빛내는 SW 해커톤
-### 팀명 - Sleepless-in-IT-4_KNU-Hackathon2022
+
 ### 세션 - 은둔형 학교밖 청소년
+### 팀명 - Sleepless-in-IT-4_KNU-Hackathon2022
++ 인원 : 4명 (FrontEnd 2, BackEnd 2)
++ FrontEnd: React, Styled-Component,?
++ BackEnd: Spring-boot, JPA, MySQL
 
 ## 목차
 - [주제](#주제)
