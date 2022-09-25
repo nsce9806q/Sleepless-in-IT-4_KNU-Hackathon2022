@@ -87,7 +87,7 @@
 | Name | Major |Email|
 |---|---|---|
 | 홍희림  | 컴퓨터학부 |@knu.ac.kr|
-|   | 컴퓨터학부 |@knu.ac.kr|
+| 고동재  | 컴퓨터학부 |@knu.ac.kr|
 
 ### Back-End
 | Name | Major |Email|
