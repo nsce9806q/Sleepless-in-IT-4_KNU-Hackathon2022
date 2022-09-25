@@ -18,4 +18,5 @@ export default function QuestionCild() {
 
 const Main = styled.div`
   padding: 3rem;
+  font-size: 1.5rem;
 `;

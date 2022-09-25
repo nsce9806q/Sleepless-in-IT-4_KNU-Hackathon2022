@@ -10,6 +10,7 @@ import QuestionParent from "./pages/QuestionParent";
 import Activity from "./pages/Activity";
 import ActivityInside from "./pages/AcitivityInside";
 import Myhome from "./pages/Myhome";
+import Err from "./pages/Err";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/activity" element={<Activity />}/>
         <Route path="/activity/inside" element={<ActivityInside />}/>
         <Route path="/myhome" element={<Myhome />} />
+        <Route path="*" element={<Err />} />
       </Routes>
     </>
   );

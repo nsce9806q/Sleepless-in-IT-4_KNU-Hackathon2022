@@ -18,17 +18,17 @@ root.render(
   <React.StrictMode>
     <Router>
       <GlobalStyles />
-      <MantineProvider theme={mantineStyle}>
-        <AlertProvider>
-          <LoadingProvider>
-            <AuthProvider>
-              <Routes>
-                <Route path="/*" element={<App />} />
-              </Routes>
-            </AuthProvider>
-          </LoadingProvider>
-        </AlertProvider>
-      </MantineProvider>
+        <MantineProvider theme={mantineStyle}>
+          <AlertProvider>
+            <LoadingProvider>
+              <AuthProvider>
+                <Routes>
+                  <Route path="/*" element={<App />} />
+                </Routes>
+              </AuthProvider>
+            </LoadingProvider>
+          </AlertProvider>
+        </MantineProvider>
     </Router>
   </React.StrictMode>
 );

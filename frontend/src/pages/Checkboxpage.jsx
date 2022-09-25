@@ -32,7 +32,7 @@ function CheckboxPage (props) {
           </StyledDiv>
         ))}
         <br/>
-        <button type="button" class="btn btn-secondary" onClick={handleSubmit}>선택 완료!</button>
+        <button type="button" class="btn btn-warning" onClick={handleSubmit}>선택 완료!</button>
       </StyledFieldset>
     </form>
   </main>
