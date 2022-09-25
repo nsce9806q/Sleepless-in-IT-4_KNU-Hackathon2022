@@ -7,10 +7,8 @@
 <br/>
 💎 https://hanzip.sleeplessinit4.com : 웹사이트 도메인
 
-### 팀명 - Sleepless-in-IT-4_KNU-Hackathon2022
+### 팀명 - IT 4호관의 잠 못이루는 밤
 + 인원 : 4명 (FrontEnd 2, BackEnd 2)
-+ FrontEnd: React, Styled-Component,?
-+ BackEnd: Spring-boot, JPA, MySQL
 
 ## 목차
 - [주제](#주제)
