@@ -86,8 +86,6 @@ https://www.youtube.com/watch?v=H-J61jpIaww&ab_channel=%ED%95%9C%EC%A7%91
 ## 상세 페이지
 
 ### 로그인과 회원가입
-![회원가입](https://user-images.githubusercontent.com/48575816/192136354-91e1b0c0-bd4a-45c9-b930-32fdf23c3f61.png)
-
 
 + 먼저, 부모가 회원가입을 하고 가족 닉네임을 설정하여 집을 생성합니다.
 + 이후, 자식이 회원가입을 할때 가족 등록번호를 입력하여 자식과 부모가 한 집을 통해 연동이 되게끔 합니다.
