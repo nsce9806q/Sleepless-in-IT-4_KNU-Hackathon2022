@@ -16,8 +16,6 @@ export default function Myhome() {
         <Img size="15rem" src={"MainImg.png"} />
         <StyledH1>행복한 우리집</StyledH1>
       </FormWrapper>
-      <StyledBtn onClick={()=>{ navigate('/myhome/done')}}>함께했어요</StyledBtn>
-      <StyledBtn onClick={()=>{ navigate('/myhome/do')}}>함께할거에요</StyledBtn>
     <TodoList/>
 
     </Layout>

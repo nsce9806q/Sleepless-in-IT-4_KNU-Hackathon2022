@@ -117,20 +117,15 @@ export default function TodoList() {
 							label={'일정 내용'}
 						/>
 						<Group mt={'md'} position={'apart'}>
-							<Button
+							<Button  color="yellow"
 								onClick={() => {
 									setOpened(false);
 								}}
 								variant={'subtle'}>
 								취소
 							</Button>
-							<Button
+							<Button color="yellow"
 								onClick={() => {
-		
-
-
-
-
 							createTask();
 									setOpened(false);
 								}}>
@@ -144,11 +139,10 @@ export default function TodoList() {
 								sx={theme => ({
 									fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 									fontWeight: 700,
-								})} color={'#5C5F66'}>
+								})} color={'#F7AC46'}>
                                 일정 보기
 							</Title>
 							<ActionIcon
-								color={'blue'}
 								onClick={() => toggleColorScheme()}
 								size='lg'>
 								{colorScheme === 'dark' ? (
@@ -184,11 +178,11 @@ export default function TodoList() {
 								}
 							})
 						) : (
-							<Text size={'lg'} mt={'md'} color={'dimmed'}>
+							<Text size={'lg'} mt={'md'} color="gray">
 								가족과 함께하는 동행
 							</Text>
 						)}
-						<Button
+						<Button  color="yellow"
 							onClick={() => {
 								setOpened(true);
 							}}
