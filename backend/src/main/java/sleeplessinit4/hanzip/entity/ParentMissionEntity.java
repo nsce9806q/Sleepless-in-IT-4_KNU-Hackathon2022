@@ -20,13 +20,13 @@ public class ParentMissionEntity extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long parentMissionId;
 
-    @Column(length = 2)
+    @Column(length = 10)
     private Long missionLevel;
 
-    @Column(length = 20)
+    @Column(length = 255)
     private String missionTitle;
 
-    @Column(length = 200)
+    @Column(length = 255)
     private String missionContent;
 
     @Column(length = 10)
@@ -42,7 +42,7 @@ public class ParentMissionEntity extends BaseTimeEntity {
     @Builder.Default
     private Boolean isComplete = Boolean.FALSE;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="parent_id")
     private ParentEntity parent;
 

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sleeplessinit4.hanzip.common.exception.ChildrenMissionNotFoundException;
 import sleeplessinit4.hanzip.dto.ChildrenMissionDto;
+import sleeplessinit4.hanzip.dto.ParentMissionDto;
 import sleeplessinit4.hanzip.entity.ChildrenEntity;
 import sleeplessinit4.hanzip.entity.ChildrenMissionEntity;
 import sleeplessinit4.hanzip.entity.HouseEntity;
@@ -12,6 +13,7 @@ import sleeplessinit4.hanzip.repository.ChildrenMissionRepository;
 import sleeplessinit4.hanzip.repository.ChildrenRepository;
 import sleeplessinit4.hanzip.repository.HouseRepository;
 import sleeplessinit4.hanzip.service.interfaces.ChildrenPageService;
+import sleeplessinit4.hanzip.service.interfaces.MissionService;
 
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class ChildrenPageServiceImpl implements ChildrenPageService {
     private final ChildrenMissionRepository childrenMissionRepository;
     private final ChildrenRepository childrenRepository;
     private final HouseRepository houseRepository;
+    private final MissionService missionService;
 
     /**
      * 자녀 사용자의 미션 페이지를 보여주는 메서드
@@ -38,6 +41,11 @@ public class ChildrenPageServiceImpl implements ChildrenPageService {
     public List<ChildrenMissionDto> viewChildrenMission (Long childrenId) {
         ChildrenEntity childrenEntity = childrenRepository.findChildrenWithMissionById(childrenId);
 
+        List<ChildrenMissionDto> childrenMissionDtoList = missionService.pickChildrenMission(childrenEntity.getChildrenMissionList());
+
+        return childrenMissionDtoList;
+
+        /*
         List<ChildrenMissionDto> childrenMissionDtoList = new ArrayList<>();
 
         for(ChildrenMissionEntity childrenMission : childrenEntity.getChildrenMissionList()) {
@@ -56,6 +64,7 @@ public class ChildrenPageServiceImpl implements ChildrenPageService {
         }
 
         return childrenMissionDtoList;
+         */
     }
 
     /**

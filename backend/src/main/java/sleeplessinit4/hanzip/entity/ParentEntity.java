@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import sleeplessinit4.hanzip.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -32,5 +33,6 @@ public class ParentEntity extends BaseTimeEntity {
     private HouseEntity house;
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ParentMissionEntity> parentMissionList;
+    @Builder.Default
+    private List<ParentMissionEntity> parentMissionList = new ArrayList<>();
 }

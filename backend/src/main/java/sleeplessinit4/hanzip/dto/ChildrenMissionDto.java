@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sleeplessinit4.hanzip.common.enums.IsComplete;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

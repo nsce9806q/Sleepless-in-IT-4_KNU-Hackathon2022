@@ -4,6 +4,7 @@ import lombok.*;
 import sleeplessinit4.hanzip.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -32,5 +33,6 @@ public class ChildrenEntity extends BaseTimeEntity {
     private HouseEntity house;
 
     @OneToMany(mappedBy = "children", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ChildrenMissionEntity> childrenMissionList;
+    @Builder.Default
+    private List<ChildrenMissionEntity> childrenMissionList = new ArrayList<>();
 }
