@@ -8,7 +8,7 @@
 💎 https://hanzip.sleeplessinit4.com : 웹사이트 도메인
 
 ### 영상
-https://www.youtube.com/watch?v=H-J61jpIaww&ab_channel=%ED%95%9C%EC%A7%91
+📌 https://www.youtube.com/watch?v=H-J61jpIaww&ab_channel=%ED%95%9C%EC%A7%91 : 유튜브 
 
 ### 팀명 - IT 4호관의 잠 못이루는 밤
 + 인원 : 4명 (FrontEnd 2, BackEnd 2)
