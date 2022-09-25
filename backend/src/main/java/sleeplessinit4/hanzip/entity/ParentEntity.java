@@ -23,7 +23,6 @@ public class ParentEntity extends BaseTimeEntity {
     @Column(length = 20)
     private String loginId;
 
-    @Column(length = 20)
     private String password;
 
     @Column(length = 12)
