@@ -1,6 +1,11 @@
-# 2022 대구를 빛내는 SW 해커톤✨
+# ✨2022 대구를 빛내는 SW 해커톤✨
 
 ### 세션 - 은둔형 학교밖 청소년
+
+### 도메인
++ https://api.sleeplessinit4.com : API 서버 도메인
++ https://hanzip.sleeplessinit4.com : 웹사이트 도메인
+
 ### 팀명 - Sleepless-in-IT-4_KNU-Hackathon2022
 + 인원 : 4명 (FrontEnd 2, BackEnd 2)
 + FrontEnd: React, Styled-Component,?
@@ -54,9 +59,6 @@
 또한 미션들을 통해 자녀, 부모 사용자 모두 가족과 원활한 소통을 이루어 나갈것 입니다.
 가족과의 원활한 소통을 통해서 은둔 청소년의 마음이 열린다면, 현재 마련된 좋은 제도도 적극적으로 이용하여 은둔 청소년을 탈출 할 수 있을것입니다.
 
-## 서비스 아키텍처
-![img1](https://user-images.githubusercontent.com/48575816/192134369-70ccf96b-daba-4c01-907f-910eb0b597e7.jpg)
-
 ## ⚙ 주요 기능
 + Route53: 등록된 도메인 호스팅 영역 관리, SSL 인증서 관리, AWS 리소스 라우팅
 + CloudFront: 웹페이지 CDN 서비스
@@ -64,8 +66,18 @@
 + Elastic Load Balancing: API 요청 로드 밸런서
 + EC2: API서버 (우분투 기반, 스프링 프레임워크)
 + RDS: 데이터베이스 서버 (MySQL)
-+ https://api.sleeplessinit4.com : API 서버 도메인
-+ https://hanzip.sleeplessinit4.com : 웹사이트 도메인
+
+## 서비스 아키텍처
+![img1](https://user-images.githubusercontent.com/48575816/192134369-70ccf96b-daba-4c01-907f-910eb0b597e7.jpg)
+
++ 스프링 프레임워크 기반의 API 서버는 객체 지향의 장점을 살리기 위해 관심사 분리를 통해 각 계층별로 구조적으로 탄탄하게 설계하였습니다.
++ Configuration: Spring Security, CorsFilter, Swagger 연동 등 여러 설정
++ Controller: Request/Response 처리 레이어
++ Service: 비지니스 로직 레이어
++ Repository: 데이터 베이스 접근 로직  레이어 (DAO)
++ Entity: 객체를 관계형 데이터베이스에 매핑하는 ORM 레이어
++ DTO: 계층 간 데이터 교환을 하기 위해 사용하는 객체
++ Common: 공용으로 쓰이는 객체
 
 
 ## 상세 페이지
