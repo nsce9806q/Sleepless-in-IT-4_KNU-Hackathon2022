@@ -2,28 +2,19 @@ import Layout from "../components/Layout";
 import styled from "styled-components";
 import Img from "../components/atoms/Img";
 import { THEME } from "../constants/colors";
-import { useState } from 'react';
-import { Button, Navbar, Nav, Container } from 'react-bootstrap';
-import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
 import TodoList from "../components/TodoList";
 
 export default function Myhome() {
-  let navigate = useNavigate();
-
   return (
-    <Layout title="마이홈" hasBackButton>
+    <Layout title="마이홈">
       <FormWrapper>
         <Img size="15rem" src={"MainImg.png"} />
         <StyledH1>행복한 우리집</StyledH1>
       </FormWrapper>
-    <TodoList/>
-
+      <TodoList />
     </Layout>
   );
 }
-const Main = styled.div`
-  padding: 3rem;
-`;
 
 const FormWrapper = styled.form`
   height: 100%;
@@ -42,8 +33,8 @@ const StyledH1 = styled.h1`
 const StyledBtn = styled.button`
   font-size: 1rem;
   font-weight: bold;
-  color: ${(p)=>(p.selected ? THEME.black700 : THEME.primary)};
+  color: ${(p) => (p.selected ? THEME.black700 : THEME.primary)};
   margin-bottom: 1.5rem;
-  background-color:transparent;
+  background-color: transparent;
   border: none;
 `;
