@@ -16,8 +16,8 @@ export default function Mainpage() {
   const { loading, error, data } = state;
 
   if (loading) return <Loading></Loading>;
-  if (error) return <div>error..</div>;
-  if (!data) return <div>{""}</div>;
+  if (error) return <Navigate to="/err" />;
+  if (!data) return <div>잠시만요!</div>;
 
   const [level, curLevelExp] = getLevel(data.exp);
   return (

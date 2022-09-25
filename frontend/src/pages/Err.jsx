@@ -2,16 +2,14 @@ import Layout from "../components/Layout";
 import styled from "styled-components";
 import Img from "../components/atoms/Img";
 
-
 export default function Err() {
-
   return (
     <Layout title="에러 페이지" hasBackButton>
-        <FormWrapper>
-            <Img size="15rem" src={"Err.png"} />
-            <StyledH1>에러 페이지입니다.</StyledH1>
-            <StyledH1>탭에 있는 메뉴를 선택하세요.</StyledH1>
-        </FormWrapper>
+      <FormWrapper>
+        <Img size="15rem" src={"Err.png"} />
+        <StyledH1>에러 페이지입니다.</StyledH1>
+        <StyledH1>탭에 있는 메뉴를 선택하세요.</StyledH1>
+      </FormWrapper>
     </Layout>
   );
 }
@@ -27,7 +25,7 @@ const FormWrapper = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin 3rem auto;
+  margin: 18vh auto;
 `;
 
 const StyledH1 = styled.h1`
