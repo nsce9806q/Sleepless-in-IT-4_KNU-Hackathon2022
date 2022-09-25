@@ -3,8 +3,8 @@
 ### 세션 - 은둔형 학교밖 청소년
 
 ### 도메인
-+ https://api.sleeplessinit4.com : API 서버 도메인
-+ https://hanzip.sleeplessinit4.com : 웹사이트 도메인
+💎 https://api.sleeplessinit4.com : API 서버 도메인
+💎 https://hanzip.sleeplessinit4.com : 웹사이트 도메인
 
 ### 팀명 - Sleepless-in-IT-4_KNU-Hackathon2022
 + 인원 : 4명 (FrontEnd 2, BackEnd 2)
