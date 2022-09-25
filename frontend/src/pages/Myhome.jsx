@@ -36,13 +36,13 @@ const FormWrapper = styled.form`
 `;
 
 const StyledH1 = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin: 1rem 0;
 `;
 
 const StyledBtn = styled.button`
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: ${(p)=>(p.selected ? THEME.black700 : THEME.primary)};
   margin-bottom: 1.5rem;

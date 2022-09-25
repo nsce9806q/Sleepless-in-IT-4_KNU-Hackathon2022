@@ -65,6 +65,6 @@ const StyledInput = styled.input`
 `;
 
 const StyledP = styled.p`
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
+  margin-left: 1.25rem;
+  font-size: 1rem;
 `;
