@@ -22,5 +22,5 @@ public class HouseDto {
     private Long exp;
     private Long activityPoint;
     private Long communicationPoint;
-    private Long randomCode;
+    private String randomCode;
 }

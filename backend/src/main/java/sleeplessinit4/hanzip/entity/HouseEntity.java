@@ -38,7 +38,7 @@ public class HouseEntity extends BaseTimeEntity {
     private Long communicationPoint = 0L;
 
     @Column(length = 10)
-    private Long randomCode;
+    private String randomCode;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="parent_id")
