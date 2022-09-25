@@ -73,8 +73,9 @@
 + EC2: API서버 (우분투 기반, 스프링 프레임워크)
 + RDS: 데이터베이스 서버 (MySQL)
 
-## 아키텍처
-![img1](https://user-images.githubusercontent.com/48575816/192134369-70ccf96b-daba-4c01-907f-910eb0b597e7.jpg)
+## 아키텍처 설계
+
+<img width="406" alt="im2" src="https://user-images.githubusercontent.com/48575816/192135898-fc1ae4cd-4385-4723-be97-807963db4636.png">
 
 + 스프링 프레임워크 기반의 API 서버는 객체 지향의 장점을 살리기 위해 관심사 분리를 통해 각 계층별로 구조적으로 탄탄하게 설계하였습니다.
 + Configuration: Spring Security, CorsFilter, Swagger 연동 등 여러 설정
