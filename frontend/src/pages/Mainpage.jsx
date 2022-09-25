@@ -4,19 +4,20 @@ import { THEME } from "../constants/colors";
 import { getFullDate, getLevel, getMainImgByLevel } from "../utils";
 import Img from "../components/atoms/Img";
 import Progressbar from "../components/organisms/Progressbar";
+import useAsync from "../hooks/useAsync";
+import { Navigate } from "react-router-dom";
+import { apiGetMainpage } from "../apis/mainpage";
+import Loading from "./Loading";
 
 export default function Mainpage() {
   const [year, month, day] = getFullDate();
 
-  const data = {
-    activityPoint: 5,
-    communicationPoint: 5,
-    exp: 600,
-    houseId: 0,
-    houseName: "행복한 우리집",
-    level: 0,
-    randomCode: "1234",
-  };
+  const [state] = useAsync(() => apiGetMainpage());
+  const { loading, error, data } = state;
+
+  if (loading) return <Loading></Loading>;
+  if (error) return <div>error..</div>;
+  if (!data) return <div>{""}</div>;
 
   const [level, curLevelExp] = getLevel(data.exp);
   return (

@@ -37,7 +37,7 @@ export default function Signup() {
           onClose: () => {},
         });
         setTimeout(() => {
-          load();
+          endLoad();
           navigate("/login");
         }, 1000);
       } else {

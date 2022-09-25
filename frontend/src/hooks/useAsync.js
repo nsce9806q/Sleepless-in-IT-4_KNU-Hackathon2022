@@ -35,9 +35,9 @@ function useAsync(callback, deps = []) {
   const fetchData = async () => {
     dispatch({ type: "LOADING" });
     try {
-      const [data] = await callback();
-      console.log("Async Success", data);
-      dispatch({ type: "SUCCESS", data });
+      const response = await callback();
+      console.log("Async Success", response.data);
+      dispatch({ type: "SUCCESS", data: response.data });
     } catch (e) {
       console.log("Async Error", e);
       dispatch({ type: "ERROR", error: e });
