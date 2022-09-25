@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-function Checkbox({ text }) {
+function Checkbox(props) {
   return (
     <>
-      <StyledInput type="checkbox" id={text} name={text}/>
-      <StyledLabel selected={text} htmlFor={text}>
-        <StyledP>{text}</StyledP>
+      <StyledInput type="checkbox" id={props.text} name={props.text}/>
+      <StyledLabel selected={props.img} htmlFor={props.text}>
+        <StyledP>{props.text}</StyledP>
       </StyledLabel>
     </>
   );
@@ -65,6 +65,6 @@ const StyledInput = styled.input`
 `;
 
 const StyledP = styled.p`
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
+  margin-left: 1.25rem;
+  font-size: 1rem;
 `;

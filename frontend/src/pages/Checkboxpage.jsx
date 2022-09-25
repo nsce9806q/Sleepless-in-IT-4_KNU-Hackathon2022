@@ -22,13 +22,14 @@ function CheckboxPage (props) {
 
   return (
     <main>
-    <StyledH1>오늘의 질문</StyledH1>
     <form>
       <StyledFieldset>
         {dataForm.map((item) => (
-          <Checkbox img={props.img}  key={item.id} text={item.text} onChange={()=>{
+          <StyledDiv>
+            <Checkbox img={props.img}  key={item.id} text={item.text} onChange={()=>{
             changeCheck(item.id)
           }}/>
+          </StyledDiv>
         ))}
         <br/>
         <button type="button" class="btn btn-secondary" onClick={handleSubmit}>선택 완료!</button>
@@ -43,12 +44,11 @@ export default CheckboxPage;
 const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   margin: auto;
 `;
 
-const StyledH1 = styled.h1`
+const StyledDiv = styled.div`
   font-size: 1.25rem;
-  text-align: center;
-  padding: 1.25rem;
+  padding: 0.5rem;
 `;

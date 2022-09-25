@@ -9,18 +9,9 @@ import usePath from "../hooks/usePath";
 
 export default function Activity() {
   let navigate = useNavigate();
-  const { getNthPath } = usePath();
 
   return (
     <Layout title="활동 페이지" hasBackButton>
-      <Navbar bg="light" variant="light">
-        <Container>
-          <Nav className="me-auto">
-            <Nav.Link onClick={()=>{ navigate('/activity')}}>Outside</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/activity/inside')}}>Inside</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
 
       <div class="container text-center">
         <div class="row row-cols-2 g-3" >

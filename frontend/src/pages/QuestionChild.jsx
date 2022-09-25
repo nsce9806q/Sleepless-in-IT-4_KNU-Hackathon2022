@@ -8,7 +8,7 @@ export default function QuestionCild() {
   let [Data] =useState(ChildData)
   return (
     <Layout title="오늘의 질문" hasBackButton>
-      <Main>오늘의 질문</Main>
+      <Main>오늘도 좋은 하루되세요</Main>
       <Checkboxpage Data={Data} img={true}/>
     </Layout>
 
