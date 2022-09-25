@@ -37,7 +37,7 @@ public class SecurityConfig {
         .apply(new MyCustomDsl())
         .and()
         .authorizeRequests(auth -> auth
-            .antMatchers("/children/**").authenticated()
+                .antMatchers("/children/**").authenticated()
         .anyRequest().permitAll());
 
     return http.build();

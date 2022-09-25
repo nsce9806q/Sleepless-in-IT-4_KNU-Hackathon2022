@@ -14,6 +14,7 @@ import sleeplessinit4.hanzip.entity.ParentMissionEntity;
 import sleeplessinit4.hanzip.repository.HouseRepository;
 import sleeplessinit4.hanzip.repository.ParentMissionRepository;
 import sleeplessinit4.hanzip.repository.ParentRepository;
+import sleeplessinit4.hanzip.service.interfaces.MissionService;
 import sleeplessinit4.hanzip.service.interfaces.ParentPageService;
 
 import javax.persistence.EntityManager;
@@ -31,6 +32,7 @@ public class ParentPageServiceImpl implements ParentPageService {
     private final ParentRepository parentRepository;
     private final ParentMissionRepository parentMissionRepository;
     private final HouseRepository houseRepository;
+    private final MissionService missionService;
 
     /**
      * 부모 사용자의 미션 페이지를 보여주는 메서드
@@ -41,6 +43,11 @@ public class ParentPageServiceImpl implements ParentPageService {
     public List<ParentMissionDto> viewParentMission (Long parentId) {
         ParentEntity parentEntity = parentRepository.findParentWithMissionById(parentId);
 
+        List<ParentMissionDto> parentMissionDtoList = missionService.pickParentMission(parentEntity.getParentMissionList());
+
+        return parentMissionDtoList;
+
+        /*
         List<ParentMissionDto> parentMissionDtoList = new ArrayList<>();
 
         for(ParentMissionEntity parentMission : parentEntity.getParentMissionList()) {
@@ -59,6 +66,9 @@ public class ParentPageServiceImpl implements ParentPageService {
         }
 
         return parentMissionDtoList;
+        */
+
+
     }
 
     /**

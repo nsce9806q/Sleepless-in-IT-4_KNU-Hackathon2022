@@ -13,6 +13,7 @@ import sleeplessinit4.hanzip.entity.ParentEntity;
 import sleeplessinit4.hanzip.repository.ChildrenRepository;
 import sleeplessinit4.hanzip.repository.HouseRepository;
 import sleeplessinit4.hanzip.repository.ParentRepository;
+import sleeplessinit4.hanzip.service.interfaces.MissionService;
 import sleeplessinit4.hanzip.service.interfaces.SignUpPageService;
 
 @Service
@@ -22,7 +23,8 @@ public class SignUpPageServiceImpl implements SignUpPageService {
   private final ParentRepository parentRepository;
   private final ChildrenRepository childrenRepository;
   private final HouseRepository houseRepository;
-
+  private final MissionService missionService;
+  
   private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
   @Override
@@ -32,13 +34,22 @@ public class SignUpPageServiceImpl implements SignUpPageService {
         .loginId(request.getLoginId())
         .password(bCryptPasswordEncoder.encode(request.getPassword()))
         .build();
+
     parentRepository.save(parent);
+
+    //부모 미션 문항들 생성
+    missionService.makeParentMission(parent);
 
 //    아이 DB 저장 (이름만)
     ChildrenEntity children = ChildrenEntity.builder()
         .nickName(request.getChildName())
         .build();
+    
     childrenRepository.save(children);
+
+    //자녀 기본 문항들 생성
+    missionService.makeChildrenMission(children);
+
 
 //    랜덤 코드 생성, 생성 된 랜덤 코드로 조회되는 집이 없을 때 까지 재생성
     String randomCode = createRandomCode();
