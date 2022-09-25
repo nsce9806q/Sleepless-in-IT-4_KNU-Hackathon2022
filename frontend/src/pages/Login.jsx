@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useLoading from "../hooks/useLoading";
 import { useAlert } from "../hooks/useAlert";
 import { apiLogin } from "../apis/users";
+import useAuth from "../hooks/useAuth";
 
 export default function Login() {
   const [userid, setUserid] = useState("");
@@ -17,20 +18,19 @@ export default function Login() {
 
   const { load, endLoad } = useLoading();
   const { push } = useAlert();
+  const { setAuth } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     load();
     try {
-      // TODO: axios
-      // const [data, status] =  await apiLogin({userid, psword});
-      // if (result.data.data) {
-      if (false) {
-        // storeToken(result.data.data.token);
-        // load();
-        // setTimeout(() => {
-        //   navigate("/main");
-        // }, 3000);
+      const response = await apiLogin({ userid, psword });
+      if (response.status === 200) {
+        load();
+        setAuth(response.data);
+        setTimeout(() => {
+          navigate("/main");
+        }, 1000);
       } else {
         endLoad();
         push({

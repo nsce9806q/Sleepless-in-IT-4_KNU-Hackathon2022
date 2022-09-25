@@ -5,10 +5,11 @@ import { THEME } from "../../constants/colors";
 import useLoading from "../../hooks/useLoading";
 
 export default function SuccessPage({
+  onClickBtn,
   userid,
   userType,
-  childname,
-  homename,
+  childName,
+  houseName,
   setPage,
 }) {
   const { load, endLoad } = useLoading();
@@ -33,10 +34,10 @@ export default function SuccessPage({
         {userType === "parent" && (
           <>
             <HeaderTitle>
-              자녀 이름은 <Strong>{childname}</Strong>입니다.
+              자녀 이름은 <Strong>{childName}</Strong>입니다.
             </HeaderTitle>
             <HeaderTitle>
-              우리집 이름은 <Strong>{homename}</Strong>입니다.
+              우리집 이름은 <Strong>{houseName}</Strong>입니다.
             </HeaderTitle>
           </>
         )}
@@ -44,7 +45,7 @@ export default function SuccessPage({
         <div></div>
       </ThirdBody>
       <FooterWrapper>
-        <FooterButton disabled={userid === ""} onClick={() => {}}>
+        <FooterButton disabled={userid === ""} onClick={onClickBtn}>
           회원가입
         </FooterButton>
       </FooterWrapper>

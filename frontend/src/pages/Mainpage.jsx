@@ -19,7 +19,6 @@ export default function Mainpage() {
   };
 
   const [level, curLevelExp] = getLevel(data.exp);
-
   return (
     <Layout title="메인페이지">
       <Wrapper>

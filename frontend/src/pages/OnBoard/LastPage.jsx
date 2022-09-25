@@ -6,12 +6,12 @@ import { THEME } from "../../constants/colors";
 import useLoading from "../../hooks/useLoading";
 
 export default function LastPage({
-  homename,
-  setHomename,
-  childname,
-  setChildname,
-  homecode,
-  setHomecode,
+  houseName,
+  setHouseName,
+  childName,
+  setChildName,
+  randomCode,
+  setRandomCode,
   userType,
   setPage,
 }) {
@@ -44,13 +44,13 @@ export default function LastPage({
         {userType === "parent" ? (
           <>
             <Input
-              value={homename}
-              setValue={setHomename}
+              value={houseName}
+              setValue={setHouseName}
               placeholder={"우리집 이름"}
             ></Input>
             <Input
-              value={childname}
-              setValue={setChildname}
+              value={childName}
+              setValue={setChildName}
               placeholder={"자녀의 이름"}
             ></Input>
           </>
@@ -58,8 +58,8 @@ export default function LastPage({
           <>
             <div style={{ height: "5rem" }}></div>
             <Input
-              value={homecode}
-              setValue={setHomecode}
+              value={randomCode}
+              setValue={setRandomCode}
               placeholder={"우리집 코드"}
             ></Input>
           </>
@@ -68,16 +68,20 @@ export default function LastPage({
       <FooterWrapper>
         {userType === "parent" ? (
           <FooterButton
-            disabled={homename === "" || childname === ""}
+            disabled={houseName === "" || childName === ""}
             onClick={() => {
-              setPage((p) => p + 1);
+              load();
+              setTimeout(() => {
+                endLoad();
+                setPage((p) => p + 1);
+              }, 500);
             }}
           >
             다음
           </FooterButton>
         ) : (
           <FooterButton
-            disabled={homecode === ""}
+            disabled={randomCode === ""}
             onClick={() => {
               load();
               setTimeout(() => {

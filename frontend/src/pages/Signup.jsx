@@ -1,16 +1,12 @@
-import LoginInput from "../components/atoms/LoginInput";
 import { useState } from "react";
-import Btn from "../components/atoms/Btn";
-import Img from "../components/atoms/Img";
-import styled from "styled-components";
-import { THEME } from "../constants/colors";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useLoading from "../hooks/useLoading";
 import { useAlert } from "../hooks/useAlert";
 import SelectPage from "./OnBoard/SelectPage";
 import SignupPage from "./OnBoard/SignupPage";
 import LastPage from "./OnBoard/LastPage";
 import SuccessPage from "./OnBoard/SuccessPage";
+import { apiSignupChildren, apiSignupParent } from "../apis/users";
 
 export default function Signup() {
   const [page, setPage] = useState(0);
@@ -18,17 +14,51 @@ export default function Signup() {
   const [userid, setUserid] = useState("");
   const [psword, setPsword] = useState("");
   const [repsword, setRepsword] = useState("");
-  const [homecode, setHomecode] = useState("");
-  const [homename, setHomename] = useState("");
-  const [childname, setChildname] = useState("");
+  const [randomCode, setRandomCode] = useState("");
+  const [houseName, sethouseName] = useState("");
+  const [childName, setchildName] = useState("");
 
   const navigate = useNavigate();
 
-  // const { load, endLoad } = useLoading();
-  // const { push } = useAlert();
+  const { load, endLoad } = useLoading();
+  const { push, closeAll } = useAlert();
+
+  const handleSubmit = async () => {
+    load();
+    try {
+      const response =
+        userType === "parent"
+          ? await apiSignupParent({ userid, psword, childName, houseName })
+          : await apiSignupChildren({ userid, psword, randomCode });
+      if (response.status === 200) {
+        push({
+          message: "회원가입 성공!",
+          buttonText: "확인",
+          onClose: () => {},
+        });
+        setTimeout(() => {
+          load();
+          navigate("/login");
+        }, 1000);
+      } else {
+        endLoad();
+        push({
+          message: "정보를 다시한번 확인해주세요!",
+          buttonText: "확인",
+          onClose: () => {},
+        });
+      }
+    } catch (error) {
+      endLoad();
+      push({
+        message: "정보를 다시한번 확인해주세요!",
+        buttonText: "확인",
+        onClose: () => {},
+      });
+    }
+  };
 
   if (page === -1) {
-    console.log("? 왜여기");
     return navigate("/login");
   }
 
@@ -62,12 +92,12 @@ export default function Signup() {
   if (page === 2) {
     return (
       <LastPage
-        homename={homename}
-        setHomename={setHomename}
-        childname={childname}
-        setChildname={setChildname}
-        homecode={homecode}
-        setHomecode={setHomecode}
+        houseName={houseName}
+        setHouseName={sethouseName}
+        childName={childName}
+        setChildName={setchildName}
+        randomCode={randomCode}
+        setRandomCode={setRandomCode}
         userType={userType}
         setPage={setPage}
       />
@@ -77,10 +107,11 @@ export default function Signup() {
   if (page === 3) {
     return (
       <SuccessPage
+        onClickBtn={handleSubmit}
         userid={userid}
         userType={userType}
-        childname={childname}
-        homename={homename}
+        childName={childName}
+        houseName={houseName}
         setPage={setPage}
       />
     );
