@@ -2,11 +2,6 @@
 
 ### 세션 - 은둔형 학교밖 청소년
 
-### 도메인
-💎 https://api.sleeplessinit4.com : API 서버 도메인
-<br/>
-💎 https://hanzip.sleeplessinit4.com : 웹사이트 도메인
-
 ### 영상
 📌 https://www.youtube.com/watch?v=H-J61jpIaww&ab_channel=%ED%95%9C%EC%A7%91 : 유튜브 시연
 
