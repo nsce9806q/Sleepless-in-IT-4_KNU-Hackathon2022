@@ -56,16 +56,6 @@
 - 또한,미션들을 통해 자녀, 부모 사용자 모두 가족과 원활한 소통을 이루어 나갈것 입니다.
 - 가족과의 원활한 소통을 통해서 은둔 청소년의 마음이 열린다면, 현재 마련된 좋은 제도도 적극적으로 이용하여 은둔 청소년을 탈출 할 수 있을것입니다.
 
-## ⚙프로젝트에 활용된 기술 클라우드
-![img1](https://user-images.githubusercontent.com/48575816/192134369-70ccf96b-daba-4c01-907f-910eb0b597e7.jpg)
-
-+ Route53: 등록된 도메인 호스팅 영역 관리, SSL 인증서 관리, AWS 리소스 라우팅
-+ CloudFront: 웹페이지 CDN 서비스
-+ S3: 정적 웹페이지 호스팅 (React)
-+ Elastic Load Balancing: API 요청 로드 밸런서
-+ EC2: API서버 (우분투 기반, 스프링 프레임워크)
-+ RDS: 데이터베이스 서버 (MySQL)
-
 ## 아키텍처 설계
 
 <img width="406" alt="im2" src="https://user-images.githubusercontent.com/48575816/192135898-fc1ae4cd-4385-4723-be97-807963db4636.png">
